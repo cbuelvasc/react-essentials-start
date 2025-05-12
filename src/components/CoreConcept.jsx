@@ -1,4 +1,5 @@
 import { string } from "prop-types";
+import "./CoreConcept.css";
 
 function CoreConcept({ image, title, description }) {
   return (
