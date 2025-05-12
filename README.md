@@ -11,6 +11,7 @@ This project is a starter template to learn and practice the essential concepts 
 - `npm run dev`: Starts the development server.
 - `npm run build`: Generates the production build.
 - `npm run preview`: Previews the production build.
+- `npm run lint`: Runs the linter to check code quality.
 
 ## Installation
 1. Clone the repository.
