@@ -4,6 +4,7 @@ import CoreConcept from "./components/CoreConcept";
 import Header from "./components/Header";
 import TabButton from "./components/TabButton";
 import { CORE_CONCEPTS, EXAMPLES } from "./data";
+import TabContent from "./components/TabContent";
 
 function App() {
   const [selectedTopic, setSelectedTopic] = useState();
@@ -60,13 +61,11 @@ function App() {
           </menu>
           <div id="tab-content">
             {selectedTopic ? (
-              <>
-                <h3>{EXAMPLES[selectedTopic].title}</h3>
-                <p>{EXAMPLES[selectedTopic].description}</p>
-                <pre>
-                  <code>{EXAMPLES[selectedTopic].code}</code>
-                </pre>
-              </>
+              <TabContent
+                title={EXAMPLES[selectedTopic].title}
+                description={EXAMPLES[selectedTopic].description}
+                code={EXAMPLES[selectedTopic].code}
+              />
             ) : (
               <h3>Please click a button</h3>
             )}
