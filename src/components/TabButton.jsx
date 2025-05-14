@@ -1,9 +1,16 @@
 import { string, bool, func } from "prop-types";
 
-function TabButton({ children, isActive, onSelect }) {  
+function TabButton({ children, isSelected, onSelect }) {
+  const handleClick = () => {
+    onSelect();
+  };
+
   return (
     <li>
-      <button onClick={onSelect} className={isActive ? "active" : undefined}>
+      <button
+        onClick={handleClick}
+        className={isSelected ? "active" : undefined}
+      >
         {children}
       </button>
     </li>
@@ -12,7 +19,7 @@ function TabButton({ children, isActive, onSelect }) {
 
 TabButton.propTypes = {
   children: string.isRequired,
-  isActive: bool,
+  isSelected: bool,
   onSelect: func.isRequired,
 };
 
