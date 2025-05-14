@@ -3,7 +3,7 @@ import { useState } from "react";
 import CoreConcept from "./components/CoreConcept";
 import Header from "./components/Header";
 import TabButton from "./components/TabButton";
-import { CORE_CONCEPTS, EXAMPLES } from "./data";
+import { CORE_CONCEPTS, EXAMPLES, TOPICS } from "./data";
 import TabContent from "./components/TabContent";
 
 function App() {
@@ -34,30 +34,15 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton
-              isSelected={selectedTopic === "components"}
-              onSelect={() => handleSelect("components")}
-            >
-              Components
-            </TabButton>
-            <TabButton
-              isSelected={selectedTopic === "jsx"}
-              onSelect={() => handleSelect("jsx")}
-            >
-              JSX
-            </TabButton>
-            <TabButton
-              isSelected={selectedTopic === "props"}
-              onSelect={() => handleSelect("props")}
-            >
-              Props
-            </TabButton>
-            <TabButton
-              isSelected={selectedTopic === "state"}
-              onSelect={() => handleSelect("state")}
-            >
-              State
-            </TabButton>
+            {TOPICS.map(({ topic, label }) => (
+              <TabButton
+                key={topic}
+                isSelected={selectedTopic === topic}
+                onSelect={() => handleSelect(topic)}
+              >
+                {label}
+              </TabButton>
+            ))}
           </menu>
           <div id="tab-content">
             {selectedTopic ? (

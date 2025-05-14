@@ -80,3 +80,10 @@ function Counter() {
 }`,
   },
 };
+
+export const TOPICS = [
+  { topic: "components", label: "Components" },
+  { topic: "jsx", label: "JSX" },
+  { topic: "props", label: "Props" },
+  { topic: "state", label: "State" },
+];
