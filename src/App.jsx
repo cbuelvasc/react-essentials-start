@@ -9,12 +9,12 @@ import TabContent from "./components/TabContent";
 function App() {
   const [selectedTopic, setSelectedTopic] = useState();
 
-  const handleSelect = (selectedButton) => {
+  function handleSelect (selectedButton) {
     setSelectedTopic(selectedButton);
   };
 
   return (
-    <div>
+    <>
       <Header />
       <main>
         <section id="core-concepts">
@@ -56,7 +56,7 @@ function App() {
           </div>
         </section>
       </main>
-    </div>
+    </>
   );
 }
 
